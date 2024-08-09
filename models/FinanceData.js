@@ -4,9 +4,9 @@ const { Model, DataTypes } = require("sequelize");
 // Local Modules
 const sequelize = require("../config/connection");
 
-class ExampleData extends Model {}
+class FinanceData extends Model {}
 
-ExampleData.init(
+FinanceData.init(
   {
     id: {
       type: DataTypes.INTEGER,

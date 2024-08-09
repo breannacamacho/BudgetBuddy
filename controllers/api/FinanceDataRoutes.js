@@ -1,18 +1,18 @@
 const router = require("express").Router();
 
 // import any models you plan to use for this data's routes here
-const { ExampleData } = require("../../models");
+const { FinanceData } = require("../../models");
 
 // protects routes from non-logged in users
 const { apiGuard } = require("../../utils/authGuard");
 
 router.post("/", apiGuard, async (req, res) => {
   try {
-    const newExampleData = await ExampleData.create({
+    const newFinanceData = await FinanceData.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-    res.json(newExampleData);
+    res.json(newFinanceData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -20,7 +20,7 @@ router.post("/", apiGuard, async (req, res) => {
 
 router.put("/:id", apiGuard, async (req, res) => {
   try {
-    const [updatedRows] = await ExampleData.update(req.body, {
+    const [updatedRows] = await FinanceData.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -38,7 +38,7 @@ router.put("/:id", apiGuard, async (req, res) => {
 
 router.delete("/:id", apiGuard, async (req, res) => {
   try {
-    const [destroyedRows] = ExampleData.destroy({
+    const [destroyedRows] = FinanceData.destroy({
       where: {
         id: req.params.id,
       },
