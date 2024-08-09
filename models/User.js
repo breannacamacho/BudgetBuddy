@@ -18,10 +18,20 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
+    email: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        isEmail: true,
+      }
+    },
+
     username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -1,12 +1,13 @@
+// Table for user Income
 // Third-party Modules
 const { Model, DataTypes } = require("sequelize");
 
 // Local Modules
 const sequelize = require("../config/connection");
 
-class ExampleData extends Model {}
+class income extends Model {}
 
-ExampleData.init(
+income.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,19 +15,20 @@ ExampleData.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    message: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id",
-      },
-    },
-    // Reminder- Add any new columns to the ExampleData model here
+        model: 'user',
+        key: 'id'
+      }
+    }
+      
+    
   },
+
+  
+
   {
     sequelize,
     timestamps: false,
@@ -36,4 +38,4 @@ ExampleData.init(
   }
 );
 
-module.exports = ExampleData;
+module.exports = income;

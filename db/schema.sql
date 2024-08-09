@@ -1,5 +1,5 @@
 -- Drop database command
-DROP DATABASE IF EXISTS example_project_2_db;
+DROP DATABASE IF EXISTS budgetbuddy_db;
 
 -- Create database command
-CREATE DATABASE example_project_2_db;
+CREATE DATABASE budgetbuddy_db;
