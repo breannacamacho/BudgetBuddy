@@ -14,9 +14,39 @@ FinanceData.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    message: {
+    amount: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    transaction_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    payment_method: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    currency: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'USD',
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Completed',
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,15 +55,14 @@ FinanceData.init(
         key: "id",
       },
     },
-    // Reminder- Add any new columns to the ExampleData model here
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "finance_data",
   }
 );
 
-module.exports = ExampleData;
+module.exports = FinanceData;

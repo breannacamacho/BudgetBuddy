@@ -24,7 +24,7 @@ User.init(
       allowNull: false,
       unique: true,
       validate: {
-        len: [1, 30],
+        len: [6, 30], // Minimum and maximum length
       },
     },
     password: {
@@ -32,27 +32,27 @@ User.init(
       allowNull: false,
       validate: {
         len: [8, 128], // Minimum and maximum length
-        isUppercase(value) {
+        isUppercase(value) { // Password requires an Uppercase letter
           if (!/[A-Z]/.test(value)) {
             throw new Error('Password must contain at least one uppercase letter.');
           }
         },
-        isLowercase(value) {
+        isLowercase(value) { // Password requires a Lowercase letter
           if (!/[a-z]/.test(value)) {
             throw new Error('Password must contain at least one lowercase letter.');
           }
         },
-        isNumber(value) {
+        isNumber(value) { // Password requires a Number
           if (!/\d/.test(value)) {
             throw new Error('Password must contain at least one number.');
           }
         },
-        isSpecialChar(value) {
+        isSpecialChar(value) { // Password requires a Special Character
           if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
             throw new Error('Password must contain at least one special character.');
           }
         },
-        notContainUsername(value) {
+        notContainUsername(value) { // Password cannot contain username
           if (value.includes(this.username)) {
             throw new Error('Password cannot contain username.');
           }
