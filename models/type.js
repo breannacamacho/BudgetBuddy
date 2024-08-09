@@ -28,10 +28,10 @@ type.init(
 
     type_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'expenses',
-        key: 'id'
-      }
+      //references: {
+       // model: 'expenses',
+        //key: 'id'
+     // }
     }
       
   

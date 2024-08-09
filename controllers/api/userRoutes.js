@@ -9,7 +9,9 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.email = userData.email;
       req.session.username = userData.username;
+      req.session.password =userData.password;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -22,7 +24,14 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { username: req.body.username },
+      where: { $or:[
+         {
+          username: req.body.username
+         },
+         {
+          email: req.body.email
+         }
+        ]},
     });
 
     if (!userData) {

@@ -17,7 +17,7 @@ expenses.init(
     },
     
     type: {
-        type: STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
 
