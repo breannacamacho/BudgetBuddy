@@ -16,7 +16,7 @@ type.init(
       autoIncrement: true,
     },
     
-    expense: {
+    expenseName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -44,7 +44,7 @@ type.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "type",
   }
 );
 

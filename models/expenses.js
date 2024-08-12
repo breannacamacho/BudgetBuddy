@@ -17,7 +17,7 @@ expenses.init(
     },
     
     type: {
-        type: STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
 
@@ -38,7 +38,7 @@ expenses.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "expenses",
   }
 );
 
