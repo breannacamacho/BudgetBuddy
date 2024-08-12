@@ -11,10 +11,16 @@ expenses.init(
   {
     type_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'expenses',
-        key: 'id'
-      }
+
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    
+    type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+
     },
 
     user_id: {
@@ -35,7 +41,7 @@ expenses.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "expenses",
   }
 );
 

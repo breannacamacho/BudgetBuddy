@@ -9,7 +9,15 @@ class type extends Model {}
 
 type.init(
   {
-    purpose: {
+
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    
+    expenseName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -30,7 +38,7 @@ type.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "data one",
+    modelName: "type",
   }
 );
 
