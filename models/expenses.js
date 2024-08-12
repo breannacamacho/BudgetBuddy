@@ -5,12 +5,13 @@ const { Model, DataTypes } = require("sequelize");
 // Local Modules
 const sequelize = require("../config/connection");
 
-class expenses extends Model {}
+class expenses extends Model { }
 
 expenses.init(
   {
-    id: {
+    type_id: {
       type: DataTypes.INTEGER,
+
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
@@ -19,6 +20,7 @@ expenses.init(
     type: {
         type: DataTypes.STRING,
         allowNull: false,
+
     },
 
     user_id: {
@@ -28,10 +30,11 @@ expenses.init(
         key: 'id'
       }
     }
-      
+
+
   },
 
-  
+
 
   {
     sequelize,

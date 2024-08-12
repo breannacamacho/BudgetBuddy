@@ -9,6 +9,7 @@ class type extends Model {}
 
 type.init(
   {
+
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,18 +22,11 @@ type.init(
       allowNull: false,
     },
 
-    value: {
+    amount: {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
-
-    type_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'expenses',
-        key: 'id'
-      }
-    }
+    
       
   
   },

@@ -22,6 +22,10 @@ income.init(
         model: 'user',
         key: 'id'
       }
+    },
+    amount: {
+      type: DataTypes.DOUBLE,
+      
     }
       
     
