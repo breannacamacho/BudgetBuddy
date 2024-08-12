@@ -1,22 +1,24 @@
-<div>
-    {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
-
-  {{#each examples}}
-  {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/ directory! --}}
-    {{>items}}
-  {{/each}}
-</div>
-
-<div>
+<body>
   <div>
-    <h2>Create New Message</h2>
+    {{!-- Render a list of items using the "items" partial --}}
+    {{#each examples}}
+      {{!-- Each item is rendered using the "items" partial --}}
+      {{> items}}
+    {{/each}}
   </div>
-  <form id="new-data-form">
-    <label for="data-message">Message</label>
-    <textarea name="data-message" ></textarea>
 
-    <button type="submit">Create</button>
-  </form>
-</div>
+  <div>
+    <div>
+      <h2>Input New Finance Data</h2>
+    </div>
+    <form id="new-data-form">
+      <label for="data-message">Message</label>
+      <textarea name="data-message" required></textarea>
 
-<script src="/js/newData.js"></script>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+
+  <!-- Include JavaScript file for handling form submissions -->
+  <script src="/js/newData.js"></script>
+</body>
