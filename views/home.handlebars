@@ -1,7 +1,14 @@
 <body>
   <div>
     {{!-- Render a list of items using the "items" partial --}}
-    {{#each examples}}
+    {{#each expenses}}
+      {{!-- Each item is rendered using the "items" partial --}}
+      {{> items}}
+    {{/each}}
+  </div>
+  <div>
+    {{!-- Render a list of items using the "items" partial --}}
+    {{#each incomes}}
       {{!-- Each item is rendered using the "items" partial --}}
       {{> items}}
     {{/each}}
