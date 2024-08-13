@@ -1,24 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Buddy Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
 <body>
-  <div>
-    {{!-- Render a list of items using the "items" partial --}}
-    {{#each examples}}
-      {{!-- Each item is rendered using the "items" partial --}}
-      {{> items}}
-    {{/each}}
-  </div>
-
-  <div>
-    <div>
-      <h2>Input New Finance Data</h2>
+  <!-- Top Navigation Bar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Budget Buddy</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/public/js/logout.js">Logout</a></li>
+      </ul>
     </div>
-    <form id="new-data-form">
-      <label for="data-message">Message</label>
-      <textarea name="data-message" required></textarea>
+  </nav>
 
-      <button type="submit">Create</button>
-    </form>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-sm-12">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="/views/home.handlebars">Dashboard</a></li>
+      </div>
+
+      <!-- main Content Area -->
+      <div class="col-md-9 col-sm-12">
+        <!-- displaying Items -->
+        <div>
+          {{!-- render a list of items using the "items" partial --}}
+          {{#each examples}}
+            {{!-- each item is rendered using the "items" partial --}}
+            {{> items}}
+          {{/each}}
+        </div>
+
+        <!-- input Form -->
+        <div>
+          <h2>Input New Finance Data</h2>
+          <form id="new-data-form">
+            <div class="form-group">
+              <label for="data-message">Message</label>
+              <textarea name="data-message" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Include JavaScript file for handling form submissions -->
-  <script src="/js/newData.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- include JavaScript file for handling form submissions -->
+  <script src="/public/js/newData.js"></script>
 </body>
+
+</html>

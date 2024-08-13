@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{! Reminder- Edit this for your project! }}
     <title>Project Two Example</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
   </head>
 
   <body>
@@ -13,11 +13,11 @@
     <nav id="nav">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/pageOne">Page One</a></li>
+        <li><a href="/views/page-one.handlebars">Page One</a></li>
         {{#if loggedIn}}
           <li><a href="#" id="logout">Logout</a></li>
         {{else}}
-          <li><a href="/login">Login</a></li>
+          <li><a href="/views/login.handlebars">Login</a></li>
         {{/if}}
       </ul>
     </nav>
@@ -39,7 +39,7 @@
     </footer>
 
     {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
+      <script src="/public/js/logout.js"></script>
     {{/if}}
   </body>
 

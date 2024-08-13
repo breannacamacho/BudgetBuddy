@@ -36,7 +36,7 @@ const handleNewDataForm = async function (event) {
 
     // Notify the user of success and redirect or update the page
     alert('Data submitted successfully!');
-    document.location.replace('/dashboard'); // Redirect to a different page
+    document.location.replace('/views/home.handlebars'); // Redirect to a different page
   } catch (error) {
     console.error('Error:', error);
     alert('There was a problem submitting your data. Please try again.');
