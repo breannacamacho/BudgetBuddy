@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "expenseName": "Office Supplies",
+      "amount": 150.75
+    },
+    {
+      "id": 2,
+      "expenseName": "Travel",
+      "amount": 1200.50
+    },
+    {
+      "id": 3,
+      "expenseName": "Utilities",
+      "amount": 300.00
+    },
+    {
+      "id": 4,
+      "expenseName": "Software Subscription",
+      "amount": 75.99
+    },
+    {
+      "id": 5,
+      "expenseName": "Marketing",
+      "amount": 500.00
+    }
+  ]
