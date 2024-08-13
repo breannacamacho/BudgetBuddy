@@ -17,14 +17,19 @@
                 <a href="/" class="brand-logo">Budget Buddy</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="/views/home.handlebars">Dashboard</a></li>
+                    <li><a href="/views/login.handlebars">Login</a></li>
+                    <li><a href="/views/signup.handlebars">Sign Up</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
+<!-- sidebar -->
+      <div class="col-md-3 col-sm-12">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="/views/page-one.handlebars">Dashboard</a></li>
+        </ul>
+      </div>
     {{! Content }}
     <main class="container">
       {{!-- Reminder- Depending on which route your user is visiting, the {{{body}}} will be replaced with the respective handlebar located in the /views/ directory!--}}
