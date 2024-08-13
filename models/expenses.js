@@ -23,6 +23,11 @@ expenses.init(
 
     },
 
+    amount: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
