@@ -1,11 +1,13 @@
 const sequelize = require("../config/connection");
 
 // Reminder- import any models you want to seed here
-const { User, ExampleData } = require("../models");
+const { User, expenses, income, type } = require("../models");
 
 // Reminder- import any data you want to seed here
-const exampleData = require("./exampleData.json");
+const expenseData = require("./expenseData.json");
 const userData = require("./userData.json");
+const incomeData = require("./incomeData.json")
+const typeData = require("./typeData.json")
 
 const seedDatabase = async () => {
   // sync all models
@@ -20,13 +22,26 @@ const seedDatabase = async () => {
   console.log("Users created");
 
   // bulkCreate example data
-  await ExampleData.bulkCreate(exampleData, {
+  await expenses.bulkCreate(expenseData, {
     individualHooks: true,
     returning: true,
   });
-  console.log("Example data created");
+  console.log("Expenses data created");
+
+  await income.bulkCreate(incomeData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log("income data created");
+
+  await type.bulkCreate(typeData, {
+    individualHooks: true,
+    returning: true,
+  });
+  console.log("income data created");
 
   // Reminder- add any other models you want to seed here
+
 
   process.exit(0);
 };
