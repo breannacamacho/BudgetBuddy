@@ -15,7 +15,7 @@ const handleNewDataForm = async function (event) {
 
   try {
     // Make the POST request to the API
-    const response = await fetch('/api/finance/new', {
+    const response = await fetch('/api/financeData/', {
       method: 'POST',
       body: JSON.stringify({
         title,
