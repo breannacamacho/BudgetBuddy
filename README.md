@@ -19,26 +19,25 @@
 <!-- PROJECT LOGO -->
 
 <div align="center">
-  <a href="https://github.com/404pandas/project-2-setup-guide">
   <!-- TODO: Correct this file path to a logo if you would like one; otherwise, delete this a href -->
-    <img src="./public/images/" alt="Logo" width="80" height="80">
+    <img src="./public/images/logo1.png" alt="Logo" width="80" height="80">
   </a>
 
 <!-- TODO: Edit App name -->
-  <h3 align="center">Project 2 App Name</h3>
+  <h3 align="center">BudgetBuddy</h3>
 
   <p align="center">
   <!-- TODO: Edit App description -->
-    Project 2 Description will go here    <br />
-    <a href="https://github.com/404pandas/project-2-setup-guide"><strong>Explore the docs »</strong></a>
+    BudgetBuddy is a full-stack interactive application designed to help users manage their finances effectively. The app features user authentication to ensure secure access to personal financial data. It provides a clean and responsive user interface, built with Handlebars.js for templating and styled with CSS to ensure a polished look across devices.    <br />
+    <a href="https://github.com/breannacamacho/BudgetBuddy"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <!-- TODO: Edit deployment link -->
-    <a href="https://github.com/404pandas/project-2-setup-guide">View Demo(Coming Soon)</a>
+    <a href="https://github.com/breannacamacho/BudgetBuddy">View Demo(Coming Soon)</a>
     ·
-    <a href="https://github.com/404pandas/project-2-setup-guide/issues">Report Bug</a>
+    <a href="https://github.com/breannacamacho/BudgetBuddy">Report Bug</a>
     ·
-    <a href="https://github.com/404pandas/project-2-setup-guide/issues">Request Feature</a>
+    <a href="https://github.com/breannacamacho/BudgetBuddy">Request Feature</a>
 
   </p>
 </div>
@@ -122,7 +121,7 @@ Once completely built, this application will function as a deployed app on Rende
 1. Clone the rep
 
 ```
-git clone https://github.com/404pandas/project-2-setup-guide.git
+git clone https://github.com/breannacamacho/BudgetBuddy
 ```
 
 2. Install dependencies
@@ -179,7 +178,7 @@ npm run start
 - [ ] Add Lines of future development ideas here
 - [ ] Add Lines of future development ideas here
 
-See the [open issues](https://github.com/404pandas/project-2-setup-guide/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/breannacamacho/BudgetBuddy/issues) for a full list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -208,17 +207,17 @@ This project is licensed under the MIT license.
 
 <!-- TODO: Add your name, portfolio link, and email if you would like here -->
 
-[Mary Elenius](https://maryelenius.com/) - mary.panda.jackson@gmail.com
+[Breanna Camacho](https://github.com/breannacamacho) - breannacamacho1@gmail.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[Brian Zhen](https://github.com/heropon1k) - contributor.one@email.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[Rawnaq Kabairzad](https://github.com/rawnaqk) - contributor.one@email.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[Xavier Leon](https://github.com/lateralmonster1) - contributor.one@email.com
 
 Project Links:
 
-[Github Repository](https://github.com/404pandas/project-2-setup-guide)
+[Github Repository](https://github.com/breannacamacho/BudgetBuddy)
 
 <!-- TODO: add your deployment link here -->
 
