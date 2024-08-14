@@ -1,12 +1,7 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-const { withGuard } = require("../utils/authGuard");
-const { expenses, income, User } = require("../models/");
-=======
 const {withGuard} = require("../utils/authGuard")
 // Import any models you plan to use for data's routes here
 const { expenses, income, User, type } = require("../models/");
->>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
 
 // Landing page route
 router.get("/", async (req, res) => {
@@ -61,7 +56,6 @@ router.get("/signup", (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // Dashboard page route
 router.get("/dashboard", withGuard, async (req, res) => {
   try {
@@ -72,7 +66,6 @@ router.get("/dashboard", withGuard, async (req, res) => {
 });
 
 module.exports = router;
-=======
 // localhost:3001/page-one
 router.get("/page-one", withGuard, async (req, res) => {
   //const user = await User.findByPk(req.session.user_id, {
@@ -111,4 +104,3 @@ router.get("/api/userdata", withGuard, async (req, res) => {
 });
 
 module.exports = router;
->>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
