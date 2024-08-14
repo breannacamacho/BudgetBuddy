@@ -1,12 +1,18 @@
 const router = require("express").Router();
-const {withGuard} = require("../utils/authGuard")
-// Import any models you plan to use for data's routes here
+const { withGuard } = require("../utils/authGuard");
 const { expenses, income, User } = require("../models/");
 
-// If you would like to use an authGuard middleware, import it here
-// localhost:3001/
-// add a get / (landing page) route here
+// Landing page route
 router.get("/", async (req, res) => {
+  try {
+    res.render("landing"); // Render the landing page view
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Overview page route
+router.get("/overview", withGuard, async (req, res) => {
   try {
     const expensesData = await expenses.findAll({
       include: [User],
@@ -20,9 +26,7 @@ router.get("/", async (req, res) => {
 
     const incomes = incomeData.map((income) => income.get({ plain: true }));
 
-    // Reminder- We're passing the examples data to the home handlebars template here!
-    // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
-    res.render("home", {
+    res.render("overview", {
       expensesArray,
       incomes,
       loggedIn: req.session.logged_in,
@@ -33,7 +37,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// add a get /login route here
+// Login page route
 router.get("/login", (req, res) => {
   try {
     res.render("login");
@@ -42,7 +46,7 @@ router.get("/login", (req, res) => {
   }
 });
 
-// add a get /signup route here
+// Signup page route
 router.get("/signup", (req, res) => {
   try {
     res.render("signup");
@@ -51,15 +55,13 @@ router.get("/signup", (req, res) => {
   }
 });
 
-// localhost:3001/page-one
-router.get("/page-one", withGuard, async (req, res) => {
-  
-  // Reminder- We're also passing the loggedIn status to the page-one handlebars template here so that we can conditionally render items if the user is logged in or not.
-  res.render("page-one" );
-
-  //res.status(500).json(err);
-
+// Dashboard page route
+router.get("/dashboard", withGuard, async (req, res) => {
+  try {
+    res.render("dashboard");
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-
 
 module.exports = router;

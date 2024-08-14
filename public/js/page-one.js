@@ -36,12 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             tooltip: {
                 callbacks: {
-                    label: function (tooltipItem) {
-                        return tooltipItem.label + ': ' + tooltipItem.raw;
+                    label: function (tooltipItem, data) {
+                        const label = data.labels[tooltipItem.index] || '';
+                        return label + ': ' + data.datasets[0].data[tooltipItem.index];
                     }
                 }
             }
         }
     )
-})
-console.log("This is page-one.js talking!");
+});
+
