@@ -1,0 +1,46 @@
+<body>
+  <div>
+    <h2>Expenses</h2>
+    {{#each expenses}}
+      {{> items}}
+    {{/each}}
+  </div>
+  
+  <div>
+    <h2>Incomes</h2>
+    {{#each incomes}}
+      {{> items}}
+    {{/each}}
+  </div>
+
+  <div>
+    <h2>Input New Finance Data</h2>
+    <form id="new-data-form">
+      <label for="data-title">Title</label>
+      <input type="text" name="data-title" required>
+
+      <label for="data-amount">Amount</label>
+      <input type="number" name="data-amount" step="0.01" required>
+
+      <label for="data-description">Description</label>
+      <textarea name="data-description" required></textarea>
+
+      <label for="data-type">Type</label>
+      <select name="data-type" required>
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select>
+
+      <button type="submit">Create</button>
+    </form>
+  </div>
+
+  <div id="total">
+    <h2>Total</h2>
+    <p id="total-expenses">Total Expenses: $0.00</p>
+    <p id="total-incomes">Total Incomes: $0.00</p>
+    <p id="total-balance">Total Balance: $0.00</p>
+  </div>
+
+  <script src="/js/newData.js"></script>
+</body>

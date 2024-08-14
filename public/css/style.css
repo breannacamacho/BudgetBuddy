@@ -1,33 +1,234 @@
-/* any css stylesheets can go in this folder */
-/* hint- remember to import them in your handlebars! */
-#header {
-  background-color: black;
-  color: green;
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa; 
+  color: #333; 
+  margin: 0;
+  padding: 0rem;
 }
 
-#footer {
-  background-color: black;
-  color: green;
-}
-
-#nav {
-  display: flex;
-}
-
-#nav>ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-}
-
-#nav>ul>li {
-  margin: 0 10px;
-}
-
-.row{
-  position: relative;
+header {
+  background-color: #343a40; 
+  color: #ffffff; 
+  padding: 1rem;
+  position: fixed;
   width: 100%;
-  padding-right:15px;
-  padding-left:15px;
-text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 6rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+header .brand-logo {
+  display: flex;
+  align-items: center; 
+}
+
+header .brand-logo img {
+  height: 4rem; 
+  width: auto; 
+}
+
+header .nav-wrapper {
+  margin-left: auto; 
+}
+
+header .nav-wrapper ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+}
+
+header .nav-wrapper ul li {
+  margin: 0;
+}
+
+header .nav-wrapper ul li a {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+header .nav-wrapper ul li a:hover {
+  background-color: #495057; 
+  border-radius: 4px;
+}
+
+
+main {
+  margin-top: 5rem; 
+  padding: 2rem;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  position: relative;
+}
+
+
+form {
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background-color: #0056b3; 
+}
+
+
+#sidebar {
+  padding: 1rem;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#sidebar ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #007bff; 
+}
+
+#sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+
+footer {
+  background-color: #343a40; 
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+}
+
+
+#total {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#total h2 {
+  margin-bottom: 1rem;
+}
+
+#total p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.landing-content {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 5rem; 
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.landing-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.landing-content ul li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.landing-content .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0.5rem;
+}
+
+.landing-content .btn-primary {
+  background-color: #007bff; 
+}
+
+.landing-content .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.landing-content .btn-secondary {
+  background-color: #6c757d; 
+}
+
+.landing-content .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+@media (max-width: 768px) {
+  header .nav-wrapper ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .nav-wrapper ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .landing-content {
+    margin-top: 2rem; 
+  }
 }

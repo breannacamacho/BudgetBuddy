@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     )
-})
+
+});
+
 console.log("This is page-one.js talking!");
+
 

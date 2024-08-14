@@ -6,9 +6,10 @@ const handleNewDataForm = async function (event) {
   const title = document.querySelector('input[name="data-title"]').value.trim();
   const amount = document.querySelector('input[name="data-amount"]').value.trim();
   const description = document.querySelector('textarea[name="data-description"]').value.trim();
+  const type = document.querySelector('select[name="data-type"]').value;
 
   // Basic validation
-  if (!title || !amount || isNaN(amount) || !description) {
+  if (!title || !amount || isNaN(amount) || !description || !type) {
     alert('Please fill out all fields correctly.');
     return;
   }
@@ -19,28 +20,37 @@ const handleNewDataForm = async function (event) {
       method: 'POST',
       body: JSON.stringify({
         title,
-        amount: parseFloat(amount), // Ensure amount is a number
-        description
+        amount: parseFloat(amount), 
+        description,
+        type
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-    // Check for errors in the response
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    // parse the response JSON if needed
-    const result = await response.json();
-
-    // Notify the user of success and redirect or update the page
+    // Notify the user of success
     alert('Data submitted successfully!');
-    document.location.replace('/views/home.handlebars'); // Redirect to a different page
+
+    const result = await response.json();
+    updateTotals(result.totalExpenses, result.totalIncomes);
+
   } catch (error) {
     console.error('Error:', error);
     alert('There was a problem submitting your data. Please try again.');
   }
+};
+
+// Function to update totals
+const updateTotals = (totalExpenses, totalIncomes) => {
+  const totalBalance = totalIncomes - totalExpenses;
+  document.getElementById('total-expenses').textContent = `Total Expenses: $${totalExpenses.toFixed(2)}`;
+  document.getElementById('total-incomes').textContent = `Total Incomes: $${totalIncomes.toFixed(2)}`;
+  document.getElementById('total-balance').textContent = `Total Balance: $${totalBalance.toFixed(2)}`;
 };
 
 // Attach the event listener to the form

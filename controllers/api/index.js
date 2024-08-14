@@ -1,11 +1,12 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-// Import all of the routes from /api/ here
-const userRoutes = require("./userRoutes");
-const FinanceDataRoutes = require("./FinanceDataRoutes");
+// Import API routes
+const financeDataRoutes = require('./financedataroutes'); 
+const userRoutes = require('./userroutes'); 
 
-// Connect the routes to the router here
-router.use("/users", userRoutes);
-router.use("/financeData", FinanceDataRoutes);
+// Use API routes
+router.use('/finance', financeDataRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
+

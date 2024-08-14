@@ -1,6 +1,5 @@
 const router = require("express").Router();
 
-// import any models you plan to use for this data's routes here
 const { FinanceData } = require("../../models");
 
 // protects routes from non-logged in users
@@ -14,6 +13,7 @@ router.post("/", apiGuard, async (req, res) => {
     });
     res.json(newFinanceData);
   } catch (err) {
+    console.error('Error:', err); //debugging
     res.status(500).json(err);
   }
 });
