@@ -6,8 +6,8 @@ const signupFormHandler = async function (event) {
   const emailEl = document.querySelector("#email-input-signup").value.trim();
   const passwordEl = document.querySelector("#password-input-signup").value.trim();
 
-  if (passwordEl.length >= 8 && usernameEl && nameEl && emailEl) {
-    const response = await fetch("/api/users", {
+  if (passwordEl.length >= 8 && usernameEl) {
+    const response = await fetch("/api/users/", {
       method: "POST",
       body: JSON.stringify({
         name: nameEl,
