@@ -41,27 +41,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             },
             tooltip: {
                 callbacks: {
-<<<<<<< HEAD
-                    label: function (tooltipItem, data) {
-                        const label = data.labels[tooltipItem.index] || '';
-                        return label + ': ' + data.datasets[0].data[tooltipItem.index];
-=======
                     label: function (tooltipItem) {
                         const dataset = data.datasets[tooltipItem.datasetIndex];
                         const total = dataset.data.reduce((acc, val) => acc + val, 0);
                         const currentValue = dataset.data[tooltipItem.index];
                         const percentage = ((currentValue / total) * 100).toFixed(2);
                         return `${data.labels[tooltipItem.index]}: ${currentValue} (${percentage}%)`;
->>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
                     }
                 }
             }
         }
     )
-<<<<<<< HEAD
+
 });
-=======
-})
+
 console.log("This is page-one.js talking!");
->>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
+
 
