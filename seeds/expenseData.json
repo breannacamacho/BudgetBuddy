@@ -5,10 +5,11 @@
     "user_id": 1,
     "amount": 100.75
   },
+
   {
     "type_id": 2,
     "type": "Phone bill",
-    "user_id": 2,
+    "user_id": 1,
     "amount": 75.99
   },
   {
