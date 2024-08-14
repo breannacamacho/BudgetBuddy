@@ -1,6 +1,12 @@
 const router = require("express").Router();
+<<<<<<< HEAD
 const { withGuard } = require("../utils/authGuard");
 const { expenses, income, User } = require("../models/");
+=======
+const {withGuard} = require("../utils/authGuard")
+// Import any models you plan to use for data's routes here
+const { expenses, income, User, type } = require("../models/");
+>>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
 
 // Landing page route
 router.get("/", async (req, res) => {
@@ -55,6 +61,7 @@ router.get("/signup", (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Dashboard page route
 router.get("/dashboard", withGuard, async (req, res) => {
   try {
@@ -65,3 +72,43 @@ router.get("/dashboard", withGuard, async (req, res) => {
 });
 
 module.exports = router;
+=======
+// localhost:3001/page-one
+router.get("/page-one", withGuard, async (req, res) => {
+  //const user = await User.findByPk(req.session.user_id, {
+   // attributes: {exclude: ['password']},
+    //include: [{model: expenses, model: income}]
+ // })
+
+
+  //const userdata = user.get({plain: true})
+
+  //console.log(userdata)
+
+
+  res.render("page-one", {logged_in: true});
+
+  // Reminder- We're also passing the loggedIn status to the page-one handlebars template here so that we can conditionally render items if the user is logged in or not.
+  //res.render("page-one" );
+
+  //res.status(500).json(err);
+
+});
+
+router.get("/api/userdata", withGuard, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: expenses }, { model: income }]
+    });
+
+    const userdata = user.get({ plain: true });
+    console.log(userdata)
+    res.json(userdata);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch user data" });
+  }
+});
+
+module.exports = router;
+>>>>>>> c218e4fbe2fea94f81da5c718e539358b1b0777b
